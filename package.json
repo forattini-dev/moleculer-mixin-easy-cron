@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/forattini-dev/moleculer-mixin-easy-cron/issues"
   },
-  "homepage": "https://github.com/forattini-dev/moleculer-mixin-easy-cron#readme"
+  "homepage": "https://github.com/forattini-dev/moleculer-mixin-easy-cron#readme",
+  "dependencies": {
+    "cron": "^2.2.0"
+  }
 }
