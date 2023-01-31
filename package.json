@@ -3,17 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/filipeforattini/moleculer-mixin-easy-cron.git"
+    "url": "git+https://github.com/forattini-dev/moleculer-mixin-easy-cron.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/filipeforattini/moleculer-mixin-easy-cron/issues"
+    "url": "https://github.com/forattini-dev/moleculer-mixin-easy-cron/issues"
   },
-  "homepage": "https://github.com/filipeforattini/moleculer-mixin-easy-cron#readme"
+  "homepage": "https://github.com/forattini-dev/moleculer-mixin-easy-cron#readme"
 }
