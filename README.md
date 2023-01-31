@@ -3,9 +3,11 @@
 ## Install
 
 ```bash
-npm i github:moleculer-mixin-easy-cron@main
+npm i moleculer-mixin-easy-cron
+
 # or
-yarn add github:moleculer-mixin-easy-cron@main
+
+yarn add moleculer-mixin-easy-cron
 ```
 
 ## Use
