@@ -1,21 +1,19 @@
 {
-  "name": "moleculer-amqp",
-  "version": "1.0.0",
+  "name": "moleculer-mixin-easy-cron",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/forattini-dev/moleculer-amqp.git"
+    "url": "git+https://github.com/forattini-dev/moleculer-mixin-easy-cron.git"
   },
-  "author": "fforattini",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/forattini-dev/moleculer-amqp/issues"
+    "url": "https://github.com/forattini-dev/moleculer-mixin-easy-cron/issues"
   },
-  "homepage": "https://github.com/forattini-dev/moleculer-amqp#readme",
+  "homepage": "https://github.com/forattini-dev/moleculer-mixin-easy-cron#readme",
   "dependencies": {
-    "amqplib": "^0.10.3",
-    "cron": "^2.2.0",
-    "lodash": "^4.17.21"
+    "cron": "^2.2.0"
   }
 }
