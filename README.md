@@ -1,20 +1,20 @@
-# moleculer-easy-amqp
+# moleculer-amqp
 
 ## Install
 
 ```bash
-npm i moleculer-easy-amqp
+npm i moleculer-amqp
 
 # or
 
-yarn add moleculer-easy-amqp
+yarn add moleculer-amqp
 ```
 
 ## Use
 
 ```javascript
 // ./src/services/queues.service.js
-const AmqpMixin = require("moleculer-easy-amqp");
+const AmqpMixin = require("moleculer-amqp");
 
 const {
   RABBITMQ_CONNECTION_STRING,
