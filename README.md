@@ -1,33 +1,62 @@
-# moleculer-mixin-easy-cron
+# moleculer-amqp
 
 ## Install
 
 ```bash
-npm i moleculer-mixin-easy-cron
+npm i moleculer-amqp
 
 # or
 
-yarn add moleculer-mixin-easy-cron
+yarn add moleculer-amqp
 ```
 
 ## Use
 
 ```javascript
-// ./src/services/my-cron.service.js
-const Cron = require("moleculer-mixin-easy-cron");
+// ./src/services/queues.service.js
+const AmqpMixin = require("moleculer-amqp");
+
+const {
+  RABBITMQ_CONNECTION_STRING,
+  RABBITMQ_ASSERT_QUEUE = 'false',
+  RABBITMQ_ASSERT_EXCHANGE = 'false',
+} = process.env
 
 module.exports = {
-  name: "cron-daily",
-  mixins: [Cron],
+  name: "queues",
+  mixins: [AmqpMixin],
 
   settings: {
-    cron: {
-      interval: '0 0 0 * * *',
+    amqp: {
+      url: RABBITMQ_CONNECTION_STRING,
+
+      exchange: {
+        assert: Boolean(RABBITMQ_ASSERT_EXCHANGE || 'false'),
+        name: 'provider',
+        type: 'fanout',
+      },
+
+      queues: {
+        assert: Boolean(RABBITMQ_ASSERT_QUEUE || 'false'),
+        prefix: 'provider.',
+      }
     }
   },
 
-  actions: {
-    tick: (ctx) => ctx.emit('tick:day')
-  }
-};
+  queues: {
+    "resource.created": {
+      async handler(channel, message) {
+        console.log("application created", message.content.toString())
+        channel.ack(message)
+      }
+    },
+    
+    "resource.updated": {
+      async handler(channel, message) {
+        console.log("application updated", message.content.toString())
+        channel.ack(message)
+      }
+    }
+  },
+}
 ```
